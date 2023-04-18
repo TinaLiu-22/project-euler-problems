@@ -1,6 +1,6 @@
-package com.tina.projecteuler.problems;
+package com.projecteuler.problems;
 
-import com.tina.projecteuler.utils.MathUtils;
+import com.projecteuler.utils.MathUtils;
 
 import java.util.List;
 import java.util.stream.IntStream;

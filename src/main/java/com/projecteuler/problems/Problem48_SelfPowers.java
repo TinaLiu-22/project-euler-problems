@@ -1,4 +1,4 @@
-package com.tina.projecteuler.problems;
+package com.projecteuler.problems;
 
 import java.math.BigInteger;
 import java.util.stream.LongStream;

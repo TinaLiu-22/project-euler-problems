@@ -1,4 +1,4 @@
-package com.tina.projecteuler.utils;
+package com.projecteuler.utils;
 
 import java.util.Objects;
 

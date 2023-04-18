@@ -1,4 +1,4 @@
-package com.tina.projecteuler.problems;
+package com.projecteuler.problems;
 
 import java.util.List;
 import java.util.stream.Collectors;
