@@ -1,13 +1,12 @@
 package com.projecteuler.utils;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class StringUtils {
 
     public static String joinCharacters(List<Character> chars) {
-        return chars.stream()
-                    .map(String::valueOf)
-                    .collect(Collectors.joining());
+        StringBuilder builder = new StringBuilder();
+        chars.forEach(c -> builder.append(c.charValue()));
+        return builder.toString();
     }
 }
