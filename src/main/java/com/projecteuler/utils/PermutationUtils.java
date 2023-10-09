@@ -1,7 +1,9 @@
 package com.projecteuler.utils;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class PermutationUtils {
 
@@ -33,5 +35,11 @@ public class PermutationUtils {
 
         List<String> b = List.of("A", "B", "C", "D");
         System.out.println(permute(b));
+        System.out.println(MathUtils.factorial(b.size()));
+
+        List<Character> c = List.of('1', '2', '3');
+        StringBuilder s = new StringBuilder();
+        permute(c).forEach(cs -> s.append(StringUtils.joinCharacters(cs)).append(", "));
+        System.out.println(s);
     }
 }
