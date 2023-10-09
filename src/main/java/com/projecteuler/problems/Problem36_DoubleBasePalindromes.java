@@ -9,8 +9,6 @@ import java.util.stream.IntStream;
  */
 public class Problem36_DoubleBasePalindromes {
 
-
-
     public static void main(String[] args) {
         int result = IntStream.rangeClosed(1, 1000000)
                 .filter(i -> Utils.isPalindrome(Integer.toString(i)) && Utils.isPalindrome(Utils.convertIntToBase(i, 2)))

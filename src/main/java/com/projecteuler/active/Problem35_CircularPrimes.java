@@ -1,4 +1,4 @@
-package com.projecteuler.problems;
+package com.projecteuler.active;
 
 public class Problem35_CircularPrimes {
 
