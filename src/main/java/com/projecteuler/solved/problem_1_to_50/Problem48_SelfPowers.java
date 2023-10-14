@@ -1,4 +1,4 @@
-package com.projecteuler.problems;
+package com.projecteuler.solved.problem_1_to_50;
 
 import java.math.BigInteger;
 import java.util.stream.LongStream;
