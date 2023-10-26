@@ -1,19 +1,13 @@
 package com.projecteuler.solved.problem_1_to_50;
 
-import java.util.Iterator;
-import java.util.TreeSet;
+import java.util.HashSet;
 
 public class problem7_optimised {
 
-    static final int min = 2;
-    static final int max = 1000000;
+    public static HashSet<Integer> getPrimes(int min, int max) {
 
-    public static TreeSet<Integer> getPrimes(int min, int max) {
-
-        TreeSet<Integer> nonPrimes = new TreeSet<>();
-        TreeSet<Integer> primes = new TreeSet<>();
-
-        //primes.add(1);
+        HashSet<Integer> nonPrimes = new HashSet<>();
+        HashSet<Integer> primes = new HashSet<>();
 
         for (int i = min; i <= max; i++) { // Evaluate each natural numbers.
 
@@ -38,10 +32,8 @@ public class problem7_optimised {
                     break;
                 }
 
-                if (!nonPrimes.contains(num)){
-                    //System.out.println("num = " + num + " nonPrimes.add(num)");
-                    nonPrimes.add(num); // New non prime.
-                }
+                //System.out.println("num = " + num + " nonPrimes.add(num)");
+                nonPrimes.add(num); // New non prime.
 
                 j++; // Next multiple of i.
             }
@@ -53,9 +45,8 @@ public class problem7_optimised {
 
     public static void main(String[] args) {
 
-        Iterator<Integer> iterator = getPrimes(2, 30).iterator();
-        while (iterator.hasNext()) {
-            System.out.println(iterator.next());
+        for (Integer integer : getPrimes(2, 30)) {
+            System.out.println(integer);
         }
 
     }

@@ -29,7 +29,7 @@ public class problem12 {
 
     public static int problem12(int nth) {
 
-        TreeSet<Integer> primes = problem7_optimised.getPrimes(2, 1000000);
+        HashSet<Integer> primes = problem7_optimised.getPrimes(2, 1000000);
 
         int current = 0;
         int i = 1;
