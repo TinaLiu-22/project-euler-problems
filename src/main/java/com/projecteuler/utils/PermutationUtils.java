@@ -2,29 +2,32 @@ package com.projecteuler.utils;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class PermutationUtils {
 
     public static <T> List<List<T>> permute(List<T> objectList) {
-        return permutations(new ArrayList<>(), new ArrayList<>(), objectList);
+        return permutations(new ArrayList<>(), new ArrayList<>(), objectList, new boolean[objectList.size()]);
     }
 
-    /*
-    This does not support String.class because of the java string pool
-     */
-    private static <T> List<List<T>> permutations(List<List<T>> permutationList, List<T> currentPermutation, List<T> objectList) {
+    private static <T> List<List<T>> permutations(List<List<T>> permutationList, List<T> currentPermutation,
+                                                  List<T> objectList, boolean[] isUsed) {
 
         if (currentPermutation.size() == objectList.size()) {
             permutationList.add(List.copyOf(currentPermutation));
             return permutationList;
         }
 
+        AtomicInteger i = new AtomicInteger();
         objectList.forEach(o -> {
-            if (currentPermutation.stream().noneMatch(po -> po == o)) {
+            if (!isUsed[i.get()]) {
                 currentPermutation.add(o);
-                permutations(permutationList, currentPermutation, objectList);
+                isUsed[i.get()] = true;
+                permutations(permutationList, currentPermutation, objectList, isUsed);
                 currentPermutation.remove(o);
+                isUsed[i.get()] = false;
             }
+            i.getAndIncrement();
         });
 
         return permutationList;
@@ -37,13 +40,33 @@ public class PermutationUtils {
                 .toList();
     }
 
+    public static List<Integer> getDigitCircularPermutations(int number) {
+
+        List<Integer> permutations = new ArrayList<>();
+
+        int nbOfDigits = Utils.getNbOfDigits(number);
+        int dividor = (int) Math.pow(10, nbOfDigits - 1);
+
+        int currentPermutation = number;
+        for (int i = 0; i < nbOfDigits; i++) {
+            permutations.add(currentPermutation);
+
+            int firstDigit = currentPermutation / dividor;
+            currentPermutation = currentPermutation % dividor * 10 + firstDigit;
+        }
+
+        return permutations;
+    }
+
     public static void main(String[] args) {
 //        List<Integer> a = List.of(1, 2, 3);
 //        System.out.println(permute(a));
 //
-//        List<String> b = List.of("A", "B", "C", "D");
-//        System.out.println(permute(b));
-//        System.out.println(MathUtils.factorial(b.size()));
+        List<String> b = List.of("A", "A", "C");
+        System.out.println(permute(b));
+        System.out.println(MathUtils.factorial(b.size()));
+
+        System.out.println(digitPermutations(11));
 //
 //        List<Character> chars = new ArrayList<>();
 //        chars.add('1');
@@ -52,8 +75,5 @@ public class PermutationUtils {
 //        StringBuilder s = new StringBuilder();
 //        permute(chars).forEach(cs -> s.append(StringUtils.joinCharacters(cs)).append(", "));
 //        System.out.println(s);
-
-        System.out.println(permute(List.of(new String("9"), new String("7"), new String("2"),
-                new String("2"))).size());
     }
 }
