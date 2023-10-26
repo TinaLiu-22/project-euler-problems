@@ -2,6 +2,7 @@ package com.projecteuler.solved.problem_1_to_50;
 
 import com.projecteuler.solved.problem_1_to_50.problem7_optimised;
 import com.projecteuler.utils.PermutationUtils;
+import com.projecteuler.utils.PrimeUtils;
 
 import java.util.HashSet;
 import java.util.List;
@@ -15,7 +16,7 @@ public class Problem35_CircularPrimes {
 
         HashSet<Integer> circularPrimes = new HashSet<>();
 
-        HashSet<Integer> primes = problem7_optimised.getPrimes(min, max);
+        HashSet<Integer> primes = PrimeUtils.getPrimes(min, max);
         primes.stream()
                 .sorted()
                 .forEach(i -> {

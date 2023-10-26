@@ -1,5 +1,7 @@
 package com.projecteuler.solved.problem_1_to_50;
 
+import com.projecteuler.utils.PrimeUtils;
+
 import java.util.*;
 
 public class problem12 {
@@ -29,7 +31,7 @@ public class problem12 {
 
     public static int problem12(int nth) {
 
-        HashSet<Integer> primes = problem7_optimised.getPrimes(2, 1000000);
+        HashSet<Integer> primes = PrimeUtils.getPrimes(2, 1000000);
 
         int current = 0;
         int i = 1;

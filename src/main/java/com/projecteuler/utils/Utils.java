@@ -67,6 +67,25 @@ public class Utils {
         }
     }
 
+    public static List<Integer> getTruncatedInteger(int number) {
+
+        List<Integer> truncated = new ArrayList<>();
+
+        // Get substrings from Right to Left
+        for (int i = number; i > 0; i = i / 10) {
+            truncated.add(i);
+        }
+
+        // Get substring from Left to Right
+        int nbOfDigits = Utils.getNbOfDigits(number);
+        for (int i = 0; i < nbOfDigits - 1; i++) {
+            number = number % (int) Math.pow(10, nbOfDigits - 1 - i);
+            truncated.add(number);
+        }
+
+        return truncated;
+    }
+
     public static void main(String[] args) {
         List<String> chars = convertLiteralStrToListObjStr("9722");
         System.out.println(chars.get(2) == chars.get(3));
