@@ -1,4 +1,4 @@
-package com.projecteuler.solved.problem_1_to_50.problem13;// Problem 13
+package com.projecteuler.problems.solved.problem_1_to_50.problem13;// Problem 13
 
 /*
 	Work out the first ten digits of the sum of the one-hundred 50-digit numbers in file.txt .

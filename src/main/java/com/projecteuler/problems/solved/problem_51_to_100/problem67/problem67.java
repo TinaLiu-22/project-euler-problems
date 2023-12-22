@@ -1,4 +1,4 @@
-package com.projecteuler.solved.problem_51_to_100.problem67;
+package com.projecteuler.problems.solved.problem_51_to_100.problem67;
 
 /*
 By starting at the top of the triangle below and moving to adjacent numbers on the row below, the maximum total from top to bottom is 23.
@@ -20,7 +20,7 @@ to solve it. ;o)
 
 // Can re-use problem18.java. Backtracking with dynamic programming.
 
-import com.projecteuler.solved.problem_1_to_50.problem18.problem18;
+import com.projecteuler.problems.solved.problem_1_to_50.problem18.problem18;
 
 public class problem67 {
 	

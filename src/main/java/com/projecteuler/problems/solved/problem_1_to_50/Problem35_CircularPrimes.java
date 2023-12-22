@@ -1,6 +1,5 @@
-package com.projecteuler.solved.problem_1_to_50;
+package com.projecteuler.problems.solved.problem_1_to_50;
 
-import com.projecteuler.solved.problem_1_to_50.problem7_optimised;
 import com.projecteuler.utils.PermutationUtils;
 import com.projecteuler.utils.PrimeUtils;
 

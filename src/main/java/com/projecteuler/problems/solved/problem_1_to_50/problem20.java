@@ -7,7 +7,7 @@ and the sum of the digits in the number 10! is 3 + 6 + 2 + 8 + 8 + 0 + 0 = 27.
 Find the sum of the digits in the number 100!
  */
 
-package com.projecteuler.solved.problem_1_to_50;
+package com.projecteuler.problems.solved.problem_1_to_50;
 
 public class problem20 {
 

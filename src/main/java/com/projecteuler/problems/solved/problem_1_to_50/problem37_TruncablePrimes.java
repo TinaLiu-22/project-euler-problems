@@ -1,4 +1,4 @@
-package com.projecteuler.solved.problem_1_to_50;
+package com.projecteuler.problems.solved.problem_1_to_50;
 
 import com.projecteuler.utils.Utils;
 
