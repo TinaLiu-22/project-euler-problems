@@ -56,4 +56,16 @@ public class MathUtils {
 //        System.out.println(" returns " + (root1 >= 0 ? root1 : root2));
         return root1 >= 0 ? root1 : root2;
     }
+
+    public static double calculateNthTriangleNumber(int n) {
+        return (n * (n + 1)) / 2.0;
+    }
+
+    public static double calculateNthPentagonalNumber(int n) {
+        return (n * (3 * n - 1)) / 2.0;
+    }
+
+    public static double calculateNthHexagonalNumber(int n) {
+        return n * (2 * n - 1);
+    }
 }
