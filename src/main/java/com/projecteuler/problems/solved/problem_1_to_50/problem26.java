@@ -18,7 +18,7 @@ public class problem26 {
             do {
                 a = a * 10 % d;
                 digitCount++;
-            } while (a != 1);
+            } while (a != 1); // if it comes back to 1, we know the same sequence of digits will follow
 
             if (bestDigitCount < digitCount) {
                 bestDigitCount = digitCount;
