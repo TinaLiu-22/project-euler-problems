@@ -1,5 +1,8 @@
 package com.projecteuler.problems.solved.problem_1_to_50;
 
+/**
+ * <a href="https://www.xarg.org/puzzle/project-euler/problem-26/">Reference</a>
+ */
 public class problem26 {
 
     public static void main(String[] args) {
