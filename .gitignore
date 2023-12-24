@@ -1,1 +1,3 @@
 /out/production/Project Euler/**
+/target/**
+/.idea/**
